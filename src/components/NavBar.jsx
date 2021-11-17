@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import CartWidget from "./CartWidget";
+
 
 
 function NavBar() {
@@ -7,24 +9,21 @@ function NavBar() {
     <>
       <header>
         <a href="#home" className="logo">
-          <i className="fab fa-pagelines"></i>
-          Green Shop!
+          <i className="fas fa-utensils"></i>
+          My Shop!
         </a>
 
         <nav className="navbar">
           <a className="active" href="#Home">
-            home
+            Home
           </a>
-          <a href="#PersonalCare">Personal Care</a>
-          <a href="#Makeup">Makeup</a>
-          <a href="#Cleaning">Cleaning</a>
-          <a href="#Others">Others</a>
+          <a href="#Products">Products</a>
         </nav>
 
         <div className="icons">
           <i className="fas fa-bars" id="menu-bars"></i>
-          <i className="fas fa-search" id="search-icon"></i>
-          <a href="#user" className="fas fa-user"></a>
+          <i class="fas fa-search" id="search-icon"></i>
+          <a href="#user" className="fas fa-user" />
           < CartWidget /> 
         </div>
       </header>
