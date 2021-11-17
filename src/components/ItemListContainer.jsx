@@ -3,16 +3,11 @@ import React from 'react'
 function ItemListContainer() {
     return (
         <>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <section class="menu" id="menu">
 
-            <p>ESTO ES UN MENSAJE EN PANTALLA DESDE EL COMPONENTE ItemListContainer</p>
+                <h3 class="sub-heading"> our menu </h3>
+                <h1 class="heading"> today's speciality </h1>
+            </section>
         </>
     )
 }
