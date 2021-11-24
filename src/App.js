@@ -11,10 +11,7 @@ function App() {
      < NavBar />
      < Slider /> 
      < AboutUs /> 
-
      < ItemListContainer /> 
-
-¿
     </div>
   );
 }

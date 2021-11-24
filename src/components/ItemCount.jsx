@@ -3,26 +3,20 @@ import {useState} from 'react'
 const ItemCount = (initial, stock, onAdd) => {
 
     const [count, setCount] = useState(initial)
-
     function Add() {
         if (count<stock){
             setCount(count + 1)
         }   
     }
-
     function Remove() {
         if (count > 0){
             setCount(count - 1)
         }   
     }
-
     function Add_to_Cart() {
         onAdd(count)
         setCount(1)
-        
     }
-
-
     return (
         <>
             <section>
@@ -30,9 +24,7 @@ const ItemCount = (initial, stock, onAdd) => {
                 <button onClick={Remove}>-</button>
                 {count}
                 <button onClick={Add_to_Cart}>Add to cart</button>
-
             </section>
-            
         </>
     )
 }
