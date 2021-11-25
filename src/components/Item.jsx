@@ -1,55 +1,62 @@
-import React, { useState, useEffect } from "react";
-import { getFetch } from "../getFech";
-import ItemCount from "./ItemCount"
+import React, { useState, useEffect, useContext, useRef } from "react";
+import { Link } from "react-router-dom";
 
-function Item() {
-    const [items, setItems] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [bool, setBool] = useState(true)
+import cartContext from "../context/cartContext";
+import CartState from "../context/CartState";
+
+const Item = ({ item }) => {
+    const { list, quantity } = useContext(cartContext);
+    const [show, setShow] = useState(false);
+    const element = useRef();
 
     useEffect(() => {
-        getFetch
-            .then(data => {
-                console.log('llamada Api')
-                setItems(data)
-            })
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+        const observer = new window.IntersectionObserver((entries) => {
+            console.log("interseccion");
+        });
+        observer.observe(element.current);
+        console.log(element);
+        console.log(observer);
+        observer.disconnect();
+    }, []);
 
-        return () => {
-            console.log('clean')
-        }
-    }, [])
-
-    console.log('antes del rendering')
-    console.log(items)
     return (
-        <div class="box-container">
-            {loading ? <h1>CARGANDO ... </h1> : items.map(item => <div className="box" key={item.id}>
-                <div className="image">
-                    <img src={item.image} alt="item" />
-                    <a href="#content" className="fas fa-heart"></a>
-                </div>
-                <div className="content">
-                    <div className="stars">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star-half-alt"></i>
+        <>
+            <div class="box-container">
+                <div className="box" ref={element}>
+                    <div className="image">
+                        <img src={item.image} alt="item" />
+                        <a href="#content" className="fas fa-heart"></a>
                     </div>
-                    <h3>{item.name}</h3>
-                    <p>{item.description}</p>
-                    {/* < ItemCount /> */}
-                    <a href="#cart" className="btn">add to cart</a>
-                    <span className="price">{item.price}</span>
+                    <div className="content">
+                        <div className="stars">
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star"></i>
+                            <i className="fas fa-star-half-alt"></i>
+                        </div>
+                        <h3>{item.name}</h3>
+                        <p>{item.description}</p>
+                        <a href="#cart" className="btn">add to cart</a>
+                        <span className="price">{item.price}</span>
+                        <Link to={`/product/${item.id}`} className="btn">
+                            Ver Más
+                        </Link>
+                    </div>
                 </div>
             </div>
-            )}
-        </div>
+        </>
     );
-}
+};
 
-export default  Item
+
+export default Item;
+
+
+
+
+
+
+
 
 

@@ -1,10 +1,11 @@
-const items = [
+const arrayItemsList = [
     {
         id: 1,
         name: "Delicious Food 1",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 100,
+        categoria: "Rápida",
         image: "dish-1.png"
     },
     {
@@ -13,6 +14,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 200,
+        categoria: "Pollo",
         image: "dish-2.png"
     },
     {
@@ -21,6 +23,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 300,
+        categoria: "Pollo",
         image: "dish-3.png"
     },
     {
@@ -29,6 +32,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 400,
+        categoria: "Rápida",
         image: "dish-4.png"
     },
     {
@@ -37,6 +41,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 500,
+        categoria: "Postre",
         image: "dish-5.png"
     },
     {
@@ -45,6 +50,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 600,
+        categoria: "Pollo",
         image: "dish-6.png"
     },
     {
@@ -53,6 +59,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 700,
+        categoria: "Rápida",
         image: "menu-1.jpg"
     },
     {
@@ -61,6 +68,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 800,
+        categoria: "Rápida",
         image: "menu-2.jpg"
     },
     {
@@ -69,6 +77,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 900,
+        categoria: "Postre",
         image: "menu-3.jpg"
     },
     {
@@ -77,6 +86,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 1000,
+        categoria: "Postre",
         image: "menu-4.jpg"
     },
     {
@@ -85,6 +95,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 1100,
+        categoria: "Postre",
         image: "menu-5.jpg"
     },
     {
@@ -93,6 +104,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 1200,
+        categoria: "Postre",
         image: "menu-6.jpg"
     },
     {
@@ -101,6 +113,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 1300,
+        categoria: "Bebida",
         image: "menu-7.jpg"
     },
     {
@@ -109,6 +122,7 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 1400,
+        categoria: "Postre",
         image: "menu-8.jpg"
     },
     {
@@ -117,14 +131,15 @@ const items = [
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
         price: 1500,
+        categoria: "Bebida",
         image: "menu-9.jpg"
     },
 ];
 
-export const getFetch = new Promise((aceptado, rechazada) => {
-    //Acciones todo ok 
+const itemsPromise = new Promise((res, rej) => {
     setTimeout(() => {
-        aceptado(items)
-    }, 3000);
-    //rechazada('400 not found')
+        res(arrayItemsList)
+    }, 2000)
 })
+
+export default itemsPromise;

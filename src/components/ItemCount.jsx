@@ -1,35 +1,38 @@
-import {useState} from 'react'
+import React, { useState } from "react";
 
-const ItemCount = (initial, stock, onAdd) => {
+const ItemCount = ({ onAdd }) => {
+  console.log(onAdd);
+  const [contador, setContador] = useState(1);
 
-    const [count, setCount] = useState(initial)
-    function Add() {
-        if (count<stock){
-            setCount(count + 1)
-        }   
+  const incrementar = () => {
+    let max = 10;
+    if (contador < max) {
+      setContador(contador + 1);
     }
-    function Remove() {
-        if (count > 0){
-            setCount(count - 1)
-        }   
-    }
-    function Add_to_Cart() {
-        onAdd(count)
-        setCount(1)
-    }
-    return (
-        <>
-            <section>
-                <button onClick={Add}>+</button>
-                <button onClick={Remove}>-</button>
-                {count}
-                <button onClick={Add_to_Cart}>Add to cart</button>
-            </section>
-        </>
-    )
-}
+  };
 
-export default ItemCount
+  const decrementar = () => {
+    let min = 1;
+    if (contador > min) {
+      setContador(contador - 1);
+    }
+  };
+  const handlerOnAdd = () => {
+    onAdd(contador);
+  };
+
+  return (
+    <div>
+      <button onClick={decrementar}>-</button>
+      <span>{contador}</span>
+      <button onClick={incrementar}>+</button>
+      <br />
+      <button onClick={handlerOnAdd}>Agregar al carrito</button>
+    </div>
+  );
+};
+export default ItemCount;
+
 
 
 
