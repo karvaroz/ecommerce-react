@@ -1,4 +1,4 @@
-const arrayItemsList = [
+const items = [
     {
         id: 1,
         name: "Delicious Food 1",
@@ -138,8 +138,24 @@ const arrayItemsList = [
 
 const itemsPromise = new Promise((res, rej) => {
     setTimeout(() => {
-        res(arrayItemsList)
+        res(items)
     }, 2000)
 })
+
+// const item = {
+//     id: 15,
+//     name: "Delicious Food 15",
+//     description:
+//         "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
+//     price: 1500,
+//     categoria: "Bebida",
+//     image: "menu-9.jpg"
+// }
+
+// export const itemPromise = new Promise((res) => {
+//     setTimeout(() => {
+//         res(item);
+//     }, 2000);
+// });
 
 export default itemsPromise;

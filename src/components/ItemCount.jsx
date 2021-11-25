@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+// import itemsPromise from "../getFech";
 
 const ItemCount = ({ onAdd }) => {
-  console.log(onAdd);
+  // console.log(onAdd);
   const [contador, setContador] = useState(1);
 
   const incrementar = () => {
@@ -22,13 +23,14 @@ const ItemCount = ({ onAdd }) => {
   };
 
   return (
-    <div>
-      <button onClick={decrementar}>-</button>
-      <span>{contador}</span>
-      <button onClick={incrementar}>+</button>
-      <br />
-      <button onClick={handlerOnAdd}>Agregar al carrito</button>
-    </div>
+    <>
+      <div className="content">
+        <button className="btn" onClick={decrementar}>-</button>
+        <span className="price-detail">{contador}</span>
+        <button className="btn" onClick={incrementar}>+</button>
+        <button className="btn" onClick={handlerOnAdd}>Agregar al carrito</button>
+      </div>
+    </>
   );
 };
 export default ItemCount;

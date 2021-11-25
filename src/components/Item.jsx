@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-import cartContext from "../context/cartContext";
-import CartState from "../context/CartState";
+// import cartContext from "../context/cartContext";
+// import CartState from "../context/CartState";
 
 const Item = ({ item }) => {
-    const { list, quantity } = useContext(cartContext);
-    const [show, setShow] = useState(false);
+    // const { list, quantity } = useContext(cartContext);
+    // const [show, setShow] = useState(false);
     const element = useRef();
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const Item = ({ item }) => {
                 <div className="box" ref={element}>
                     <div className="image">
                         <img src={item.image} alt="item" />
-                        <a href="#content" className="fas fa-heart"></a>
+                        <a href="#content" className="fas fa-heart"> </a>
                     </div>
                     <div className="content">
                         <div className="stars">
@@ -37,7 +37,6 @@ const Item = ({ item }) => {
                         </div>
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
-                        <a href="#cart" className="btn">add to cart</a>
                         <span className="price">{item.price}</span>
                         <Link to={`/product/${item.id}`} className="btn">
                             Ver Más

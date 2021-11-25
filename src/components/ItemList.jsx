@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Item from "./Item";
 
 const ItemList = ({ items }) => {
   console.log(items);
 
   return (
-    <div>
+    <div className="box-container">
       <>
         {items.map((item) => (
           <Item key={item.id} item={item} />
