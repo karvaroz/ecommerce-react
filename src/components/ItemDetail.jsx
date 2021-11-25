@@ -6,14 +6,12 @@ import ItemCount from "./ItemCount";
 function ItemDetail({ item }) {
   const [irCart, setIrCart] = useState();
   // console.log(item);
-
   const onAdd = (contador) => {
     console.log("Udselecciono ", contador);
     setIrCart(true);
   };
 
   return (
-
     <div className="box-detail">
       <div>
         <div>
