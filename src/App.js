@@ -17,7 +17,7 @@ export default function App() {
         <CartState>
           <Routes>
             <Route path="/" element={< ItemListContainer />} />
-            <Route path="/item/:id" element={< ItemDetailContainer />} />
+            <Route path="/product/:id" element={< ItemDetailContainer />} />
             <Route path="/category/:categoryId" element={< ItemListContainer />} />
           </Routes>
         </CartState>
