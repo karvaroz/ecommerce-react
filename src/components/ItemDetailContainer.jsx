@@ -6,7 +6,7 @@ import ItemDetail from "./ItemDetail";
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const { id } = useParams();
-  // console.log(id);
+  console.log(id);
   useEffect(() => {
     itemPromise.then((resp) => {
       setItem(resp);
@@ -15,7 +15,9 @@ const ItemDetailContainer = () => {
 
   return (
     <>
+
       <ItemDetail item={item} key={id} />
+      
     </>
   );
 };
