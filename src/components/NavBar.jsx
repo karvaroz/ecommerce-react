@@ -1,30 +1,26 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
-
-
-function NavBar() {
+const NavBar = () => {
   return (
     <>
       <header>
-        <a href="#home" className="logo">
+        <Link to="/" className="logo">
           <i className="fas fa-utensils"></i>
-          My Shop!
-        </a>
-
+          My Shop!</Link>
         <nav className="navbar">
-          <a className="active" href="#Home">
-            Home
-          </a>
-          <a href="#Products">Products</a>
+          <Link to="/" className="active">Home</Link>
+          <Link to="/category/Desayuno">Desayuno</Link>
+          <Link to="/category/Almuerzo">Almuerzo</Link>
+          <Link to="/category/Postre">Postre</Link>
+          <Link to="/category/Bebida">Bebida</Link>
         </nav>
-
         <div className="icons">
           <i className="fas fa-bars" id="menu-bars"></i>
           <i class="fas fa-search" id="search-icon"></i>
-          <a href="#user" className="fas fa-user" />
-          < CartWidget /> 
+          <a href="#user" className="fas fa-user"> </a>
+          < CartWidget />
         </div>
       </header>
     </>

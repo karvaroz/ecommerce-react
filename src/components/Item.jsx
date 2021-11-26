@@ -1,28 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+// import ItemCount from './ItemCount';
 
-// import cartContext from "../context/cartContext";
-// import CartState from "../context/CartState";
+export default function Item({ item }) {
 
-const Item = ({ item }) => {
-    // const { list, quantity } = useContext(cartContext);
-    // const [show, setShow] = useState(false);
-    const element = useRef();
-
-    useEffect(() => {
-        const observer = new window.IntersectionObserver((entries) => {
-            console.log("interseccion");
-        });
-        observer.observe(element.current);
-        console.log(element);
-        console.log(observer);
-        observer.disconnect();
-    }, []);
 
     return (
         <>
             <div class="box-container">
-                <div className="box" ref={element}>
+                <div className="box" key={item.id}>
                     <div className="image">
                         <img src={item.image} alt="item" />
                         <a href="#content" className="fas fa-heart"> </a>
@@ -37,19 +23,22 @@ const Item = ({ item }) => {
                         </div>
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
-                        <span className="price">{item.price}</span>
-                        <Link to={`/product/${item.id}`} className="btn">
+                        <Link to={`/category/${item.categoria}`}>
+                            <p>Categoría: {item.categoria}</p>
+                        </Link>
+                        <span className="price">${item.price} </span><br />
+                        <Link to={`/item/${item.id}`} className="btn">
                             Ver Más
                         </Link>
+                        {/* <ItemCount stock={item.stock} id={item.id} /> */}
                     </div>
                 </div>
             </div>
         </>
     );
-};
 
+}
 
-export default Item;
 
 
 
