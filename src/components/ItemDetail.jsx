@@ -17,7 +17,7 @@ export const ItemDetail = ({ item }) => {
           <p>Description: {item.description}</p>
           <div className="icons-container">
             <div className="icons">
-              <i className="fas fa-shipping-fast"></i>
+            <i class="fas fa-sort-numeric-up-alt"></i>
               <span>Product ID: {item.id}</span>
             </div>
             <div className="icons">
@@ -25,7 +25,7 @@ export const ItemDetail = ({ item }) => {
               <span>Price: ${item.price}</span>
             </div>
             <div className="icons">
-              <i className="fas fa-headset"></i>
+            <i class="fas fa-utensils"></i>
               <span>Category: {item.categoria}</span>
             </div>
           </div>
