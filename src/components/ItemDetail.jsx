@@ -4,19 +4,35 @@ import React from "react";
 import ItemCount from "./ItemCount";
 
 export const ItemDetail = ({ item }) => {
-    console.log(item);
-    return (
-        <div className="box-detail">
-            <img src={item.image} alt="item" />
-            <div className="content">
-                <h3>{item.id}</h3>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <h2>{item.categoria}</h2>
-                <span>{item.price}</span>
-                <ItemCount stock={item.stock} id={item.id}  />
-            </div>
+  console.log(item);
+  return (
+    <section className="about" id="about">
+      <h1 className="heading"> Product Detail </h1>
+      <div className="row">
+        <div className="image">
+          <img src={item.image} alt="" />
         </div>
-    )
-}
+        <div className="content">
+          <h3>Product Name: {item.name}</h3>
+          <p>Description: {item.description}</p>
+          <div className="icons-container">
+            <div className="icons">
+              <i className="fas fa-shipping-fast"></i>
+              <span>Product ID: {item.id}</span>
+            </div>
+            <div className="icons">
+              <i className="fas fa-dollar-sign"></i>
+              <span>Price: ${item.price}</span>
+            </div>
+            <div className="icons">
+              <i className="fas fa-headset"></i>
+              <span>Category: {item.categoria}</span>
+            </div>
+          </div>
+          <ItemCount stock={item.stock} id={item.id} />
+        </div>
+      </div>
+    </section>
+  );
+};
 export default ItemDetail;

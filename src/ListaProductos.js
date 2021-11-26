@@ -1,6 +1,6 @@
 const items = [
     {
-        id: 1,
+        id: "1",
         name: "Delicious Food 1",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -11,7 +11,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 2,
+        id: "2",
         name: "Delicious Food 2",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -22,7 +22,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 3,
+        id: "3",
         name: "Delicious Food 3",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -33,7 +33,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 4,
+        id: "4",
         name: "Delicious Food 4",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -44,7 +44,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 5,
+        id: "5",
         name: "Delicious Food 5",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -55,7 +55,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 6,
+        id: "6",
         name: "Delicious Food 6",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -66,7 +66,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 7,
+        id: "7",
         name: "Delicious Food 7",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -77,7 +77,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 8,
+        id: "8",
         name: "Delicious Food 8",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -88,7 +88,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 9,
+        id: "9",
         name: "Delicious Food 9",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -99,7 +99,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 10,
+        id: "10",
         name: "Delicious Food 10",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -110,7 +110,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 11,
+        id: "11",
         name: "Delicious Food 6",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -121,7 +121,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 12,
+        id: "12",
         name: "Delicious Food 12",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -132,7 +132,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 13,
+        id: "13",
         name: "Delicious Food 13",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -143,7 +143,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 14,
+        id: "14",
         name: "Delicious Food 14",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -154,7 +154,7 @@ const items = [
         stock: 5,
     },
     {
-        id: 15,
+        id: "15",
         name: "Delicious Food 15",
         description:
             "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
@@ -164,29 +164,6 @@ const items = [
         // image: "menu-9.jpg",
         stock: 5,
     },
-];
+]
 
 export default items;
-// const itemsPromise = new Promise((res, rej) => {
-//     setTimeout(() => {
-//         res(items)
-//     }, 2000)
-// })
-
-// const item = {
-//     id: 15,
-//     name: "Delicious Food 15",
-//     description:
-//         "Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Excepturi, Accusantium.",
-//     price: 1500,
-//     categoria: "Bebida",
-//     image: "menu-9.jpg"
-// }
-
-// export const itemPromise = new Promise((res) => {
-//     setTimeout(() => {
-//         res(item);
-//     }, 2000);
-// });
-
-// export default itemsPromise;
