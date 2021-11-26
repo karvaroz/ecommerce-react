@@ -15,7 +15,7 @@ Para correr el directorio de este proyecto:
 
 ### `npm o yarn start`
 
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)]
+![MIT License(https://img.shields.io/apm/l/atomic-design-ui.svg?)]
 
 
 ## Acknowledgements
