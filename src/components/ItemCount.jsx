@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import itemsPromise from "../getFech";
 
 const ItemCount = ({ onAdd }) => {
-  // console.log(onAdd);
   const [contador, setContador] = useState(1);
 
   const incrementar = () => {

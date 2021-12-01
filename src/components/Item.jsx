@@ -1,6 +1,8 @@
-import React from "react";
+// import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
-// import ItemCount from './ItemCount';
+
+// import cartContext from "../context/cartContext";
+// import CartState from "../context/CartState";
 
 export default function Item({ item }) {
   return (
@@ -31,7 +33,6 @@ export default function Item({ item }) {
             <Link to={`/item/${item.id}`} className="btn">
               Ver Más
             </Link>
-            {/* <ItemCount stock={item.stock} id={item.id} /> */}
           </div>
         </div>
       </div>

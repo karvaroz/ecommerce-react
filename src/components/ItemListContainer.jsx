@@ -6,7 +6,6 @@ import items from "../ListaProductos";
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const { categoryId } = useParams();
 
   useEffect(() => {
@@ -16,33 +15,25 @@ const ItemListContainer = () => {
         res(items);
       }, 1000);
     });
-    if (categoryId) {
-      promesa
-        .then((items) => {
+    promesa
+      .then((items) => {
+        if (categoryId) {
           setProductos(
             items.filter((producto) => producto.categoria === categoryId)
           );
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
-      promesa
-        .then((items) => {
+        } else {
           setProductos(items);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
+        }
+      })
+
+      .catch((error) => {
+        console.log(error);
+      })
+
+      .finally(() => {
+        setLoading(false);
+      });
   }, [categoryId]);
-  console.log(productos);
 
   return (
     <section class="menu" id="menu">
@@ -54,4 +45,3 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
-

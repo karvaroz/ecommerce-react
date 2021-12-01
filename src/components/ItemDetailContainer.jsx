@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
       setProductoIndividual(prodEncontrado)
     })
       .catch((error) => {
-        console.log('ERROR');
+        console.log(error);
       })
       .finally(() => {
         setLoading(false)
