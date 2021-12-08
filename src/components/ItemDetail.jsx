@@ -1,4 +1,3 @@
-// import React, { useState, useEffect } from "react";
 import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -6,12 +5,6 @@ import ItemCount from "./ItemCount";
 import useCartContext from "../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
-  // const [irCart, setIrCart] = useState(false);
-
-  // const onAdd = (contador) => {
-  //   console.log("Ha seleccionado ", contador);
-  //   setIrCart(true);
-  // };
   const stocks = item.stock;
   const initial = 1;
   const [add, setAdd] = useState(false);
@@ -52,13 +45,6 @@ export const ItemDetail = ({ item }) => {
               <span>Category: {item.categoria}</span>
             </div>
           </div>
-          {/* {irCart ? (
-          <Link to={`/cart`}>
-            <button>Ir a Cart</button>
-          </Link>
-        ) : (
-          <ItemCount onAdd={onAdd} />
-        )} */}
           <ItemCount stocks={stocks} initial={initial} onAdd={itemQuantity} />
           <button className="btn" onClick={addToCart}>
             Agregar al Carrito
@@ -74,3 +60,4 @@ export const ItemDetail = ({ item }) => {
   );
 };
 export default ItemDetail;
+

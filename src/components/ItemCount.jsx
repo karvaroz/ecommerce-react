@@ -16,9 +16,6 @@ const ItemCount = ({ onAdd }) => {
       setContador(contador - 1);
     }
   };
-  const handlerOnAdd = () => {
-    onAdd(contador);
-  };
 
   return (
     <>
@@ -26,7 +23,6 @@ const ItemCount = ({ onAdd }) => {
         <button className="btn" onClick={decrementar}>-</button>
         <span className="price-detail">{contador}</span>
         <button className="btn" onClick={incrementar}>+</button>
-        <button className="btn" onClick={handlerOnAdd}>Agregar al carrito</button>
       </div>
     </>
   );

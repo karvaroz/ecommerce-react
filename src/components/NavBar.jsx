@@ -19,7 +19,7 @@ const NavBar = () => {
         <div className="icons">
           <i className="fas fa-bars" id="menu-bars"></i>
           <i class="fas fa-search" id="search-icon"></i>
-          <a href="#user" className="fas fa-user"> </a>
+          <a href="#home" className="fas fa-user"> </a>
           < CartWidget />
         </div>
       </header>

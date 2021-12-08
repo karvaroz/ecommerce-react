@@ -1,8 +1,5 @@
-// import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 
-// import cartContext from "../context/cartContext";
-// import CartState from "../context/CartState";
 
 export default function Item({ item }) {
   return (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import items from "../ListaProductos";
+import Loading from "./Loading";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -39,7 +40,11 @@ const ItemListContainer = () => {
     <section class="menu" id="menu">
       <h3 class="sub-heading"> our menu </h3>
       <h1 class="heading"> today's speciality </h1>
-      {loading ? <h1>Cargando ... </h1> : <ItemList items={productos} />}
+      {loading ? (
+        Loading()
+      ) : (
+        <ItemList items={productos} />
+      )}
     </section>
   );
 };

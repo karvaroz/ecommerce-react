@@ -1,48 +1,62 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import items from "../ListaProductos";
+// import items from "../ListaProductos";
 import ItemDetail from "./ItemDetail";
+import Loading from "./Loading";
+import { Link } from "react-router-dom";
+import { getFirestore } from "./firebase/firebase";
 
-const ItemDetailContainer = () => {
-  const [productoIndividual, setProductoIndividual] = useState({});
+const ItemDetailContainer = function () {
+  const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const { itemIdParams } = useParams();
+  const [error, setError] = useState(false);
+  const { id } = useParams();
 
   useEffect(() => {
-    const promesaIndividual = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(items.find(producto => producto.id === itemIdParams))
+    const db = getFirestore();
 
-      }, 2000)
-    })
-    promesaIndividual.then((prodEncontrado) => {
-      console.log('OK');
-      setProductoIndividual(prodEncontrado)
-    })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false)
+    const itemCollection = db.collection("items");
+    const product = itemCollection.doc(id);
+
+    product.get().then((doc) => {
+      if (doc.data() === undefined) {
+        setLoading(false);
+        setError(true);
+      } else {
+        setLoading(false);
+        setItem({ id: doc.id, ...doc.data() });
       }
-      )
-  }, [itemIdParams])
+    });
+  }, [id]);
 
   return (
-    <>
-      <p>
-        Lista
-      </p>
-      <div >
-        {loading
-          ?
-          <h1>Está ejecutandose la promesa del detalle</h1>
-          :
-          <ItemDetail item={productoIndividual} />}
-      </div>
-    </>
+    <div>
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        <>
+          <div>
+            <div>
+              Oops! No pudimos encontrar el producto que estás buscando.
+            </div>
+            <div>
+              <Link to="/">
+                VOLVER HOME
+              </Link>
+            </div>
+          </div>
+        </>
+      ) : (
+        <ItemDetail
+          id={item.id}
+          name={item.title}
+          price={item.price}
+          categoryId={item.categoria}
+          description={item.description}
+          image={item.image}
+        />
+      )}
+    </div>
   );
 };
-
 export default ItemDetailContainer;
